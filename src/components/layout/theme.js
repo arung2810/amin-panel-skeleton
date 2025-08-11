@@ -1,12 +1,13 @@
 import { createTheme } from '@mui/material/styles';
 
 import { Button } from '../common/Button';
+import { Input } from '../common/Input';
 
 
 const getTheme = () =>
   createTheme({
     typography: {
-      fontFamily: 'Montserrat, sans-serif',
+      fontFamily: 'Inter',
     },
     components: {
       MuiContainer: {
@@ -20,6 +21,12 @@ const getTheme = () =>
       MuiButton: {
         ...Button,
       },
+      MuiTextField: {
+        ...Input,
+      },
+      // MuiOutlinedInput: {
+      //   ...Input,
+      // },
     },
   });
 

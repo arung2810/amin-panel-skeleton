@@ -23,9 +23,9 @@ function App() {
 
   return (
     <>
-      <Button onClick={handleToggle} variant="contained" sx={{ position: 'fixed', top: 16, right: 16, zIndex: 9999 }}>
+      {/* <Button onClick={handleToggle} variant="contained" sx={{ position: 'fixed', top: 16, right: 16, zIndex: 9999 }}>
         Toggle Theme
-      </Button>
+      </Button> */}
       <AppRouter />
     </>
   );

@@ -1,6 +1,7 @@
 .authentication-wrapper{
     padding: 24px 0;
     position: relative;
+    overflow: hidden;
     .logo-box{
         img{
             height: 44px;
@@ -13,13 +14,119 @@
         background-color: var(--light-primary-color);
         height: calc(100vh - 48px);
     }
+    .authentication-right{
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        .copy-rights{
+            position: absolute;
+            bottom: 0;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 135%;
+            text-align: center;
+            color: var(--text-color);
+            width: 100%;
+        }
+        .auth-title{
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 135%;
+            color: var(--text-color);
+        }
+        .auth-para{
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 135%;
+            color: var(--grey-color);
+        }
+    }
     .bottom-right-object{
         position: absolute;
-        width: 533px;
-        height: 533px;
-        left: -100px;
+        width: 300px;
+        height: 300px;
+        right: -100px;
         bottom: -100px;
         background: radial-gradient(50% 50% at 50% 50%, #E7EDFD 0%, var(--body-bg-color) 100%);
+    }
+    .top-right-object{
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        right: -100px;
+        top: -100px;
+        background: radial-gradient(50% 50% at 50% 50%, #E7EDFD 0%, var(--body-bg-color) 100%);
+    }
+    .top-right-vector{
+        svg{
+            font-size: 150px;
+            width: 150px;
+            position: absolute;
+            top: -24px;
+            right: 24px;
+            z-index: 1;
+            color: var(--primary-color);
+            opacity: 0.8;
+        }
+    }
+    .text-link{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 135%;
+        color: var(--primary-color);
+        cursor: pointer;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    .or-divider{
+        margin-top: 32px;
+        position: relative;
+        .or-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--body-bg-color);
+            z-index: 2;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: var(--grey-color);
+            display: block;
+            padding: 0 16px;
+        }
+        .MuiDivider-root{
+            border-color: var(--border-color);
+        }
+    }
+    .login-platform{
+        width: 100%;
+        margin-top: 32px;
+        .platform-btn{
+            border: 1px solid var(--primary-color);
+            border-radius: 16px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            cursor: pointer;
+            &:hover{
+                background-color: var(--light-primary-color);
+            }
+        }
+    }
+    .auth-object{
+        max-width: 670px;
+        width: 100%;
+        margin: 0 auto;
     }
 }
 .auth-slider-wrapper{
@@ -59,4 +166,23 @@
             }
         }
     }
+}
+.opt-input-wrapper{
+    padding: 0 30px;
+    .otp-input{
+        .MuiInputBase-root{
+            width: 82px;
+            height: 82px;
+            input{
+                text-align: center;
+            }
+        }
+    }
+}
+.already-account{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 135%;
+    color: var(--grey-color); 
 }

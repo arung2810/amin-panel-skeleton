@@ -1,16 +1,31 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from '@mui/material/styles';
-import theme from './components/layout/theme';
+import { CssBaseline } from '@mui/material';
+import getTheme from './components/layout/theme';
+import { setTheme, toggleTheme } from './utils/theme';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import '../src/styles/global.scss';
+import '../src/styles/authentication.scss';
+
+// Set default theme to light on app load
+setTheme('light');
+// Example: Add a theme toggle button for demonstration
+if (typeof window !== 'undefined') {
+  window.toggleTheme = toggleTheme;
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={getTheme('light')}>
+      <CssBaseline />
       <App />
     </ThemeProvider>
   </React.StrictMode>

@@ -3,20 +3,22 @@ export const palette = {
   light: {
     mode: 'light',
     primary: {
-      main: '#7367f0',
+      main: '#4778F5',
       contrastText: '#ffffff',
+      lighBackground: '#E5EDFF',
     },
     secondary: {
-      main: '#ff9800',
+      main: '#222222',
       contrastText: '#ffffff',
     },
     background: {
-      default: '#ffffff',
-      paper: '#f9f9f9',
+      default: '#F8FAFF',
+      paper: '#FFFFFF',
     },
     text: {
-      primary: '#212121',
-      secondary: '#616161',
+      primary: '#4778F5',
+      secondary: '#222222',
+      tertiary: '#717684',
     },
     success: { main: '#4caf50' },
     warning: { main: '#ff9800' },

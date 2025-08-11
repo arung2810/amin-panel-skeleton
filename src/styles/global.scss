@@ -1,0 +1,14 @@
+:root {
+    --white-color: #ffffff;
+    --primary-color:#7367f0;
+    --font-family:Montserrat;
+}
+[data-theme="light"] {
+    --body-bg-color: #f8f7fa;
+    --card-bg-color: #ffffff;
+}
+
+[data-theme="dark"] {
+    --body-bg-color: #25293c;
+    --card-bg-color: #2f3349;
+}

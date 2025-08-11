@@ -1,14 +1,26 @@
 :root {
     --white-color: #ffffff;
     --primary-color:#7367f0;
+    --light-primary-color:#E5EDFF;
+    --pagination-color: #CBD9FE;
+
+
+
     --font-family:Montserrat;
 }
 [data-theme="light"] {
-    --body-bg-color: #f8f7fa;
+    --body-bg-color: #F8FAFF;
     --card-bg-color: #ffffff;
+    --text-color: #222222;
 }
 
 [data-theme="dark"] {
     --body-bg-color: #25293c;
     --card-bg-color: #2f3349;
+    --text-color: #ffffff;
+}
+
+body {
+    color: initial !important;
+    background-color: var(--body-bg-color) !important;
 }

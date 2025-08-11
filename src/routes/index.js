@@ -4,6 +4,7 @@ import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import ForgotPassword from '../pages/ForgotPassword';
 import VerificationCode from '../pages/VerificationCode';
+import Dashboard from '../pages/Dashboard';
 
 function AppRouter() {
   return (
@@ -14,6 +15,7 @@ function AppRouter() {
             <Route path='/sign-up' element={<SignUp />} />
             <Route path='/forgot-password' element={<ForgotPassword />} />
             <Route path='/verification-code' element={<VerificationCode />} />
+            <Route path='/dashboard' element={<Dashboard />} />
             {/* <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path='/product-search' element={<ProductSearch />} />

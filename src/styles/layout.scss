@@ -1,0 +1,91 @@
+.appbar{
+    .appbar-left{
+        display: flex;
+        align-self: center;
+        gap: 16px;
+        .appbar-menu {
+            width: 30px;
+            cursor: pointer;
+        }
+    }
+    .appbar-logo{
+        height: 40px;
+    }
+    .appbar-right{
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        .appbar-userinfo{
+            gap: 16px;
+            margin-left: 16px;
+            border-radius: 0;
+            text-align: left;
+            .userinfo-name{
+                font-size: 16px;
+                line-height: 1.2;
+                color: #222222;
+                font-weight: 600;
+            }
+            .userinfo-desc{
+                font-size: 14px;
+                line-height: 1.2;
+                color: #717684;
+            }
+            .avatar-img{
+                width: 48px;
+                height: 48px;
+                box-shadow: 0 0 0 3px #4778F5;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px){
+    .appbar {
+        .appbar-right {
+            .appbar-userinfo{
+                margin: 0;
+                .avatar-img{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+}
+
+.menu-sidebar{
+    padding: 0 !important;
+    background-color: transparent !important;
+    .sidebar-inner{
+        border-radius: 10px;
+        position: relative;
+        padding: 16px 12px 4px;
+        background-color: #4778F5;
+        border: 0;
+        .sidebar-list {
+            padding: 0;
+            width: 100%;
+        }
+        .sidebar-text span{
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+    .MuiListItemButton-root{
+        border-radius: 8px;
+        min-height: auto;
+        padding-block: 9px;
+        margin-bottom: 12px;
+    }
+    .MuiListItemButton-root.Mui-selected,
+    .MuiListItemButton-root.Mui-selected:hover {
+      background: #fff !important;
+    }
+    .MuiListItemButton-root.Mui-selected .MuiListItemIcon-root img,
+    .MuiListItemButton-root.Mui-selected .MuiListItemText-primary {
+      color: #4778F5 !important;
+      fill: #4778F5 !important;
+    }
+}

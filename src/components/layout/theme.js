@@ -2,6 +2,8 @@ import { createTheme } from '@mui/material/styles';
 
 import { Button } from '../common/Button';
 import { Input } from '../common/Input';
+import { AppBar } from '../common/AppBar';
+import { Drawer } from '../common/Drawer';
 
 
 const getTheme = () =>
@@ -20,6 +22,12 @@ const getTheme = () =>
       },
       MuiButton: {
         ...Button,
+      },
+      MuiAppBar: {
+        ...AppBar,
+      },
+      MuiDrawer: {
+        ...Drawer,
       },
       MuiTextField: {
         ...Input,

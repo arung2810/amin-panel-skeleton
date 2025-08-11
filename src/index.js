@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../src/styles/global.scss';
 import '../src/styles/authentication.scss';
+import '../src/styles/layout.scss';
 
 // Set default theme to light on app load
 setTheme('light');

@@ -124,7 +124,7 @@
         }
     }
     .auth-object{
-        max-width: 670px;
+        max-width: 570px;
         width: 100%;
         margin: 0 auto;
     }
@@ -168,11 +168,11 @@
     }
 }
 .opt-input-wrapper{
-    padding: 0 30px;
     .otp-input{
+        width: fit-content;
         .MuiInputBase-root{
-            width: 82px;
-            height: 82px;
+            width: 70px;
+            height: 70px;
             input{
                 text-align: center;
             }

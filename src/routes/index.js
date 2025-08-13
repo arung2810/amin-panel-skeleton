@@ -5,6 +5,8 @@ import SignUp from '../pages/SignUp';
 import ForgotPassword from '../pages/ForgotPassword';
 import VerificationCode from '../pages/VerificationCode';
 import Dashboard from '../pages/Dashboard';
+import SetNewPassword from '../pages/SetNewPassword';
+import SuccessfullyPasswordReset from '../pages/SuccessfullyPasswordReset';
 
 function AppRouter() {
   return (
@@ -16,6 +18,8 @@ function AppRouter() {
             <Route path='/forgot-password' element={<ForgotPassword />} />
             <Route path='/verification-code' element={<VerificationCode />} />
             <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/set-new-password' element={<SetNewPassword />} />
+            <Route path='/successfully-password-reset' element={<SuccessfullyPasswordReset />} />
             {/* <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path='/product-search' element={<ProductSearch />} />

@@ -41,7 +41,7 @@ function VerificationCode() {
                 </Stack>
 
                 <Stack gap={3} mt={3} mb={1}>
-                  <Stack gap={2} direction='row' className='field-wrapper opt-input-wrapper' justifyContent='space-between'>
+                  <Stack gap={2} direction='row' className='field-wrapper opt-input-wrapper' justifyContent='center'>
                     <TextField className='otp-input' placeholder="-" fullWidth/>
                     <TextField className='otp-input' placeholder="-" fullWidth/>
                     <TextField className='otp-input' placeholder="-" fullWidth/>

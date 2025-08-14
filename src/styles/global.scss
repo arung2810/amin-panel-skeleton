@@ -12,12 +12,29 @@
     --body-bg-color: #F8FAFF;
     --card-bg-color: #ffffff;
     --text-color: #222222;
+<<<<<<< Updated upstream
+=======
+    --grey-color: #717684;
+    --input-border-color: #F1F2F9;
+    --select-border-color: #DDE6FF;
+    --border-color: #DDDDDD;
+>>>>>>> Stashed changes
 }
 
 [data-theme="dark"] {
     --body-bg-color: #25293c;
     --card-bg-color: #2f3349;
     --text-color: #ffffff;
+}
+
+html, body{
+    height: 100%;
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 body {

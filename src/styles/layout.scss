@@ -1,15 +1,16 @@
 .appbar{
     .appbar-left{
         display: flex;
-        align-self: center;
+        align-items: center;
         gap: 16px;
         .appbar-menu {
-            width: 30px;
-            cursor: pointer;
+            padding: 0;
         }
     }
     .appbar-logo{
-        height: 40px;
+        max-width: 275px;
+        height: auto;
+        width: 100%;
     }
     .appbar-right{
         display: flex;
@@ -23,18 +24,18 @@
             .userinfo-name{
                 font-size: 16px;
                 line-height: 1.2;
-                color: #222222;
+                color: var(--text-color);
                 font-weight: 600;
             }
             .userinfo-desc{
                 font-size: 14px;
                 line-height: 1.2;
-                color: #717684;
+                color: var(--grey-color);
             }
             .avatar-img{
                 width: 48px;
                 height: 48px;
-                box-shadow: 0 0 0 3px #4778F5;
+                box-shadow: 0 0 0 3px var(--primary-color);
             }
         }
     }
@@ -58,34 +59,114 @@
     padding: 0 !important;
     background-color: transparent !important;
     .sidebar-inner{
-        border-radius: 10px;
+        border-radius: 16px;
         position: relative;
-        padding: 16px 12px 4px;
-        background-color: #4778F5;
+        padding: 16px 12px;
+        background-color: var(--primary-color);
         border: 0;
         .sidebar-list {
             padding: 0;
+            flex-grow: 1;
             width: 100%;
         }
-        .sidebar-text span{
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 600;
-        }
+        .sidebar-text{
+            margin-left: 0;
+            span{
+                color: var(--white-color);
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 1.375;
+                text-align: center;
+            }
+        } 
     }
     .MuiListItemButton-root{
-        border-radius: 8px;
-        min-height: auto;
-        padding-block: 9px;
+        border-radius: 12px;
         margin-bottom: 12px;
+        flex-direction: column;
+        padding: 16px;
+        gap: 12px;
+        .MuiListItemIcon-root {
+            svg{
+                color: var(--white-color);
+            }
+        }
+        &.Mui-selected, &.Mui-selected:hover, &:hover {
+            background-color: var(--white-color);
+            .MuiListItemIcon-root svg,.MuiListItemText-primary{
+                color: var(--primary-color);
+            }
+        }
     }
-    .MuiListItemButton-root.Mui-selected,
-    .MuiListItemButton-root.Mui-selected:hover {
-      background: #fff !important;
+}
+@media (min-width: 1200px){
+    .appbar .appbar-menu{
+        display: none;
     }
-    .MuiListItemButton-root.Mui-selected .MuiListItemIcon-root img,
-    .MuiListItemButton-root.Mui-selected .MuiListItemText-primary {
-      color: #4778F5 !important;
-      fill: #4778F5 !important;
+}
+
+@media (max-width: 1199px){
+    .menu-sidebar{
+        &.active{
+            .sidebar-inner{
+                border-radius: 0;
+            }
+        }
+        .sidebar-inner{
+            .sidebar-list{
+                margin-top: 12px
+            }
+            .sidebar-text{
+                span{
+                    white-space: nowrap;
+                    text-align: left;
+                }
+            } 
+            .appbar-userinfo{
+                border-radius: 0;
+                text-align: left;
+                color: var(--white-color);
+                gap: 12px;
+                .css-nen11g-MuiStack-root{
+                    flex-grow: 1;
+                }
+                .userinfo-name{
+                    font-size: 16px;
+                    line-height: 1.2;
+                    color: var(--white-color);
+                    font-weight: 600;
+                }
+                .userinfo-desc{
+                    font-size: 14px;
+                    line-height: 1.2;
+                    color: var(--white-color);
+                }
+                .avatar-img{
+                    width: 40px;
+                    height: 40px;
+                    box-shadow: 0 0 0 3px var(--white-color);
+                }
+            }
+        }
+        .MuiListItemButton-root{
+            flex-direction: row;
+            gap: 0;
+            padding: 12px;
+        }
+    }
+    .appbar {
+        .appbar-right {
+            gap: 10px;
+            .appbar-userinfo{
+                display: none;
+            }
+            .appbar-menu {
+                padding: 0;
+                svg {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
     }
 }

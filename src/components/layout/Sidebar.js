@@ -3,23 +3,29 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
+import { NavLink } from 'react-router-dom';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 
-import DashboardIcon from '../../assets/images/dashboard.svg';
-import SettingsIcon from '../../assets/images/settings.svg';
+import DashboardIcon from '../../assets/images/icons/Dashboard';
+import Settings from '../../assets/images/icons/SettingsIcon';
+import Downlaod from '../../assets/images/icons/Download';
+import Training from '../../assets/images/icons/Training';
+import Webinar from '../../assets/images/icons/Webinar';
 
-const DRAWER_WIDTH = 240;
-const COLLAPSED_WIDTH = 64;
+// const DRAWER_WIDTH = 240;
+const DRAWER_WIDTH = 130;
 
 const navItems = [
-  { label: 'Dashboard', icon: DashboardIcon },
-  { label: 'Settings', icon: SettingsIcon },
+  { label: 'Dashboard', icon: DashboardIcon, path: '/dashboard' },
+  { label: 'My Training', icon: Training, path: '/training' },
+  { label: 'Digital Downloads', icon: Downlaod, path: '/downloads' },
+  { label: 'Webinars', icon: Webinar, path: '/webinars' },
+  { label: 'Settings', icon: Settings, path: '/settings' },
 ];
 
-export default function Sidebar({ open = true }) {
-  const width = open ? DRAWER_WIDTH : COLLAPSED_WIDTH;
-  const [activeIndex, setActiveIndex] = React.useState(0);
+export default function Sidebar() {
+  const width = DRAWER_WIDTH;
 
   return (
     <Drawer
@@ -40,33 +46,26 @@ export default function Sidebar({ open = true }) {
       sx={{
         width,
         flexShrink: 0,
-        '& .MuiDrawer-paper': { width },
       }}
       className='menu-sidebar'
     >
       <List className='sidebar-list'>
-        {navItems.map((item, idx) => (
+        {navItems.map((item) => (
           <ListItem key={item.label} disablePadding sx={{ display: 'block' }}>
-            <ListItemButton
-              selected={idx === activeIndex}
-              onClick={() => setActiveIndex(idx)}
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
-                px: 2.5,
-              }}
+            <NavLink
+              to={item.path}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+              className={({ isActive }) => isActive ? 'active-sidebar-item' : ''}
             >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 2 : 'auto',
-                  justifyContent: 'center',
-                }}
-              >
-                <img src={item.icon} alt={item.label} width={24} height={24} />
-              </ListItemIcon>
-              <ListItemText className='sidebar-text' primary={item.label} sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
+              {({ isActive }) => (
+                <ListItemButton selected={isActive}>
+                  <ListItemIcon sx={{ minWidth: 0 }} >
+                    <item.icon />
+                  </ListItemIcon>
+                  <ListItemText className='sidebar-text' primary={item.label}/>
+                </ListItemButton>
+              )}
+            </NavLink>
           </ListItem>
         ))}
       </List>

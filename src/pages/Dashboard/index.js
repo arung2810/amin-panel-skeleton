@@ -1,10 +1,12 @@
 import React from 'react';
-import Layout from '../../components/layout/index'
+import { Box, Typography } from '@mui/material';
 
 function Dashboard() {
   return (
     <>
-      <Layout />
+      <Box>
+        <Typography variant="h3" color="initial">Dashboard Coming Soon</Typography>
+      </Box>
     </>
   );
 }

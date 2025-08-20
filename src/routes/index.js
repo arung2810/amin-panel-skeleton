@@ -1,8 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-<<<<<<< Updated upstream
-// import Layout from '../components/layout';
-import Authentication from '../pages/Authentication';
-=======
 import Layout from '../components/layout';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
@@ -13,32 +9,26 @@ import MyTraining from '../pages/MyTraining';
 import DigitalDownloads from '../pages/DigitalDownloads';
 import Webinars from '../pages/Webinars';
 import Settings from '../pages/Settings';
->>>>>>> Stashed changes
+import Course from '../pages/MyTraining/Course';
 
 function AppRouter() {
   return (
     <>
         <Router>
           <Routes>
-<<<<<<< Updated upstream
-            <Route path='/sign-in' element={<Authentication />} />
-=======
             <Route path='/sign-in' element={<SignIn />} />
             <Route path='/sign-up' element={<SignUp />} />
             <Route path='/forgot-password' element={<ForgotPassword />} />
             <Route path='/verification-code' element={<VerificationCode />} />
+            <Route path="/training/course" element={<Course />} />
             <Route path="/" element={<Layout />}>
-            <Route path="dashboard" element={<Dashboard />} />
-            <Route path="training" element={<MyTraining />} />
-            <Route path="downloads" element={<DigitalDownloads />} />
-            <Route path="webinars" element={<Webinars />} />
-            <Route path="settings" element={<Settings />} />
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="training" element={<MyTraining />} >
+              </Route>
+              <Route path="downloads" element={<DigitalDownloads />} />
+              <Route path="webinars" element={<Webinars />} />
+              <Route path="settings" element={<Settings />} />
             </Route>
->>>>>>> Stashed changes
-            {/* <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path='/product-search' element={<ProductSearch />} />
-            </Route> */}
           </Routes>
         </Router>
     </>

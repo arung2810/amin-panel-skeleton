@@ -1,12 +1,13 @@
-import React from 'react';
-import { Box, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import SidebarCollapsible from '../../components/layout/SidebarCollapsible';
 
 function Dashboard() {
+  const [open, setOpen] = useState(true); // Set to true to show sidebar by default
+
   return (
     <>
-      <Box>
-        <Typography variant="h3" color="initial">Dashboard Coming Soon</Typography>
-      </Box>
+      <SidebarCollapsible open={open} onClose={() => setOpen(false)} />
+      {/* Add a button to open it again if you want */}
     </>
   );
 }

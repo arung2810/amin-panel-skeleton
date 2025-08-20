@@ -3,18 +3,12 @@ import { Stack, IconButton, Typography, Menu, MenuItem, Tooltip, Avatar } from '
 import Avatar_Img from '../../assets/images/user.png';
 import ArrowDown from '../../assets/images/icons/ArrowDown';
 
-
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function UserInfo({ onMenuClick }) {
+function UserInfo() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
+  const handleOpenUserMenu = event => setAnchorElUser(event.currentTarget);
+  const handleCloseUserMenu = () => setAnchorElUser(null);
   return (
     <>
       <Tooltip title="Open settings">
@@ -30,19 +24,13 @@ function UserInfo({ onMenuClick }) {
       <Menu
         id="menu-appbar"
         anchorEl={anchorElUser}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right',
-        }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         keepMounted
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
         open={Boolean(anchorElUser)}
         onClose={handleCloseUserMenu}
       >
-        {settings.map((setting) => (
+        {settings.map(setting => (
           <MenuItem key={setting} onClick={handleCloseUserMenu}>
             <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
           </MenuItem>

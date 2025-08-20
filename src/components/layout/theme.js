@@ -1,8 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
 import { Button } from '../common/Button';
-<<<<<<< Updated upstream
-=======
 import { Input } from '../common/Input';
 import { AppBar } from '../common/AppBar';
 import { Drawer } from '../common/Drawer';
@@ -10,13 +8,14 @@ import { Select } from '../common/Select';
 import { Tabs } from '../common/Tabs';
 import { Card } from '../common/Card';
 import { Progress } from '../common/Progress';
->>>>>>> Stashed changes
+import { Avatar } from '../common/Avatar';
+import { AvatarGroup } from '../common/Avatar';
 
 
 const getTheme = () =>
   createTheme({
     typography: {
-      fontFamily: 'Montserrat, sans-serif',
+      fontFamily: 'Inter',
     },
     breakpoints: {
       values: {
@@ -39,8 +38,6 @@ const getTheme = () =>
       MuiButton: {
         ...Button,
       },
-<<<<<<< Updated upstream
-=======
       MuiAppBar: {
         ...AppBar,
       },
@@ -62,10 +59,15 @@ const getTheme = () =>
       MuiLinearProgress: {
         ...Progress,
       },
+      MuiAvatar: {
+        ...Avatar,
+      },
+      MuiAvatarGroup: {
+        ...AvatarGroup,
+      },
       // MuiOutlinedInput: {
       //   ...Input,
       // },
->>>>>>> Stashed changes
     },
   });
 

@@ -1,18 +1,16 @@
 // src/components/layout/SidebarCollapsible.js
-import React from 'react';
-import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import React, { useState } from 'react';
+import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, IconButton } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import UserInfo from './UserInfo';
-
-import Logo from '../../assets/images/logo.png';
+import MenuIcon from '../../assets/images/icons/Menu';
 import DashboardIcon from '../../assets/images/icons/Dashboard';
 import Settings from '../../assets/images/icons/SettingsIcon';
 import Downlaod from '../../assets/images/icons/Download';
 import Training from '../../assets/images/icons/Training';
 import Webinar from '../../assets/images/icons/Webinar';
 
-const DRAWER_WIDTH = 240;
-
+const DRAWER_WIDTH = 200;
+const COLLAPSED_WIDTH = 64;
 const navItems = [
   { label: 'Dashboard', icon: DashboardIcon, path: '/dashboard' },
   { label: 'My Training', icon: Training, path: '/training' },
@@ -21,55 +19,60 @@ const navItems = [
   { label: 'Settings', icon: Settings, path: '/settings' },
 ];
 
-export default function SidebarCollapsible({ open, onClose }) {
+export default function SidebarCollapsible() {
+  const [collapsed, setCollapsed] = useState(false);
   return (
     <Drawer
-      variant="temporary"
-      open={open}
-      onClose={onClose}
-      ModalProps={{
-        keepMounted: true, // Better mobile performance
-      }}
+      variant="permanent"
+      open
+      className="menu-sidebar"
       PaperProps={{
+        className: 'sidebar-inner',
         sx: {
-          width: DRAWER_WIDTH,
-          zIndex: (theme) => theme.zIndex.appBar - 1,
-          '& .MuiDrawer-paper': {
-            width: DRAWER_WIDTH,
-            boxSizing: 'border-box',
-          },
+          width: collapsed ? COLLAPSED_WIDTH : DRAWER_WIDTH,
+          transition: theme => theme.transitions.create('width', {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.standard,
+          }),
+          overflowX: 'hidden',
         },
-        className: `sidebar-inner${open ? ' active' : ''}`
       }}
       sx={{
-        display: { xs: 'block' },
-        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: DRAWER_WIDTH },
+        width: collapsed ? COLLAPSED_WIDTH : DRAWER_WIDTH,
+        flexShrink: 0,
+        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: collapsed ? COLLAPSED_WIDTH : DRAWER_WIDTH },
       }}
-      className={`menu-sidebar${open ? ' active' : ''}`}
     >
-      <img src={Logo} alt="LOGO" className='sidebar-logo' />
-      <List className='sidebar-list'>
-        {navItems.map((item) => (
-          <ListItem key={item.label} disablePadding>
-            <NavLink
-              to={item.path}
-              style={{ textDecoration: 'none', color: 'inherit', width: '100%' }}
-              className={({ isActive }) => isActive ? 'active-sidebar-item' : ''}
-              onClick={onClose} // Close drawer when navigating
-            >
+      <IconButton onClick={() => setCollapsed(v => !v)} size="small" sx={{ m: 1, ml: 'auto' }}>
+        <MenuIcon />
+      </IconButton>
+      <List className="sidebar-list">
+        {navItems.map(({ label, icon: Icon, path }) => (
+          <ListItem key={label} disablePadding sx={{ display: 'block' }}>
+            <NavLink to={path} style={{ textDecoration: 'none', color: 'inherit' }}>
               {({ isActive }) => (
-                <ListItemButton selected={isActive}>
-                  <ListItemIcon sx={{ minWidth: 0, mr: 2}}>
-                    <item.icon />
+                <ListItemButton selected={isActive} sx={{ px: 2 }}>
+                  <ListItemIcon sx={{ minWidth: 0, mr: collapsed ? 0 : 2, justifyContent: 'flex-start' }}>
+                    <Icon />
                   </ListItemIcon>
-                  <ListItemText primary={item.label} className='sidebar-text' />
+                  <ListItemText
+                    primary={label}
+                    className='sidebar-text'
+                    sx={{
+                      opacity: collapsed ? 0 : 1,
+                      maxWidth: collapsed ? 0 : 120,
+                      transition: 'opacity 0.2s, max-width 0.2s',
+                      overflow: 'hidden',
+                      whiteSpace: 'nowrap',
+                      ml: collapsed ? 0 : 1,
+                    }}
+                  />
                 </ListItemButton>
               )}
             </NavLink>
           </ListItem>
         ))}
       </List>
-      <UserInfo />
     </Drawer>
   );
 }

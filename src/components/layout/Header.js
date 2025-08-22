@@ -2,7 +2,7 @@ import * as React from 'react';
 import { AppBar, Box, Toolbar, IconButton } from '@mui/material';
 import Logo from '../../assets/images/logo.png';
 import Notification from '../../assets/images/icons/Notificaiton';
-import Info from '../../assets/images/icons/Info';
+import Info from '../../assets/images/icons/QuestionsIcon';
 import MenuIcon from '../../assets/images/icons/Menu';
 import UserInfo from './UserInfo';
 

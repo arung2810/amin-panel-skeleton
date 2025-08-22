@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Card, CardActions, CardContent, CardMedia, Button, Typography, Grid, LinearProgress } from '@mui/material';
-import CourseImage from '../../../assets/images/CourseImage.jpg';
-import Lessons from '../../../assets/images/icons/Lessons';
-import ArrowRight from '../../../assets/images/icons/ArrowRight';
-import PlayArrow from '../../../assets/images/icons/PlayArrow';
+import CourseImage from '../../assets/images/CourseImage.jpg';
+import Lessons from '../../assets/images/icons/Lessons';
+import ArrowRight from '../../assets/images/icons/ArrowRight';
+import PlayArrow from '../../assets/images/icons/PlayArrow';
 
 export default function MyCoursesTab() {
   const navigate = useNavigate();

@@ -8,6 +8,8 @@
         flex-wrap: wrap;
     }
 }
+
+/*Cources Card Block Start*/
 .my-courses{
     background-color: var(--white-color);
     padding: 16px;
@@ -97,7 +99,6 @@
     }
 }
 
-
 @media (max-width: 899px){
     .my-courses {
         padding: 12px;
@@ -130,74 +131,10 @@
         }
     }
 }
+/*Cources Card Block End*/
 
-/**/
-.my-community{
-    background-color: var(--white-color);
-    padding: 16px;
-    box-shadow: 0 0 10px rgba(71, 120, 245, 0.1);
-    border-radius: 16px;
-    height: 100%;
-    .community-card{
-        .community-card-media {
-            position: relative;
-            .community-card-media-overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: rgba(0,0,0,0.37);
-            }
-        }
-        .community-content{
-            h5{
-                font-weight: 600;
-            }
-            p{
-                margin-bottom: 16px;
-            }
-            .community-peoples {
-                display: flex;
-                justify-content: space-between;
-                .community-post {
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    color: var(--primary-color);
-                    p {
-                        font-weight: 600;
-                        line-height: 150%;
-                        color: var(--grey-color);
-                        margin: 0;
-                    }
-                }
-            }
-        }
-        .community-btn {
-            background: var(--primary-color);
-            font-weight: 700;
-            border-radius: 12px;
-            border: 0;
-            .MuiButton-icon {
-                width: 20px;
-                margin-left: 10px;
-            }
-            &:hover{
-                background-color: var(--dark-color);
-            }
-        }
-    }
-    .community-open{
-        color: #166E3F;
-    }
-    .community-join{
-        color: #9A1C13;
-    }
-}
+
+
 
 /**/
 .icon-wrapper {
@@ -209,6 +146,9 @@
     }
 }
 
+
+/*Course Detail Page Start*/
+/*Course Page Heading and Progress Start*/
 .course-head-wrapper {
 	background: var(--primary-color);
 	padding: 24px;
@@ -246,15 +186,21 @@
         }
 	}
 }
+/*Course Page Heading and Progress Start*/
 
 .course-topics {
     padding: 16px;
     @media (min-width: 1440px){
         padding: 24px;
     }
+    .next-btn{
+        padding-inline: 40px;
+        display: flex;
+        margin-left: auto;
+    }
     .course-main{
         background: #F8FAFF;
-        border: 1px solid #DDE6FF;
+        border: 1px solid var(--select-border-color);
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
         border-radius: 12px !important;
         margin-top: 16px;
@@ -271,12 +217,13 @@
             }
             h5{
                 margin-right: 10px;
+                font-weight: 600;
             }
             .course-overview {
                 margin-top: 16px;
                 display: flex;
                 .icon-wrapper {
-                    color: #717684;
+                    color: var(--grey-color);
                     gap: 8px;
                     p {
                         font-weight: 600;
@@ -298,7 +245,7 @@
                     &:not(:last-child) {
                         margin-right: 10px;
                         padding-right: 10px;
-                        border-right: 1px solid #717684;
+                        border-right: 1px solid var(--grey-color);
                     }
                 }
             }
@@ -308,7 +255,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background-color: #E5EDFF;
+                background-color: var(--light-primary-color);
                 border: 1px solid;
                 border-radius: 100%;
                 color: var(--primary-color);
@@ -316,15 +263,19 @@
         }
         .course-detail {
             padding: 0;
-            .course-btn {
+            .course-step {
                 padding: 16px;
-                gap: 16px;
-                background-color: #ffffff;
-                &:not(:last-child){
-                    border-bottom: 1px solid #dddddd;
+                background-color: var(--white-color);
+                .course-steplabel{
+                    gap: 16px;
+                    align-items: flex-start;
+                    padding: 0;
                 }
-                &:hover, &.Mui-selected{
-                    background-color: #E5EDFF;
+                &:not(:last-child){
+                    border-bottom: 1px solid var(--border-color);
+                }
+                &.Mui-active{
+                    background-color: var(--light-primary-color);
                 }
                 .icon-wrapper{
                     svg {
@@ -333,9 +284,9 @@
                     }
                 }
             }
-            .course-btn-icon {
-                margin-top: 3px;
-                min-width: initial;
+            .MuiStepLabel-iconContainer {
+                margin-top: 7px;
+                padding-right: 0;
                 svg{
                     width: 22px;
                     height: auto;
@@ -355,9 +306,6 @@
         }
     }
 }
-
-
-
 
 .image-wrapper {
     position: relative;
@@ -393,7 +341,7 @@
         display: block;
     }
 }
-
+/*Course Detail community block Start*/
 .course-community {
     .image-wrapper {
         margin: 12px 12px 0;
@@ -426,6 +374,7 @@
         padding: 16px 12px;
     }
 }
+/*Course Detail community block End*/
 
 .course-video-content {
     @media (min-width: 1536px){
@@ -483,76 +432,405 @@
         }
     }
 }
-
-.quiz-content {
-	padding: 24px;
-	background: #FFFFFF;
-	box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
-	border-radius: 16px;
-	img {
-		display: block;
-		max-width: 640px;
-		width: 100%;
-		height: auto;
-	}
-	.MuiButton-root {
-		border-radius: 12px;
-		padding: 12px 45px;
-		font-size: 16px;
-		font-weight: 700;
-		line-height: 1.5;
-	}
-	.icon-wrapper {
-		color: #717684;
-		p {
-			font-size: 22px;
-			font-weight: 600;
-		}
-		svg {
-			width: 24px;
-			height: auto;
-		}
-	}
-	h4 {
-		font-size: 30px;
-		font-weight: 600;
-		margin-bottom: 24px;
-		line-height: 34px;
-	}
-}
-.quiz-content {
+/*Course Survey and Quiz Start*/
+.course-main-content{
+    .icon-wrapper {
+        color: var(--grey-color);
+        p {
+            font-size: 22px;
+            font-weight: 600;
+        }
+        svg {
+            width: 24px;
+            height: auto;
+        }
+    }
+    h4 {
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        line-height: 34px;
+    }
+    .main-wrapper{
+        padding: 24px;
+        background: var(--white-color);
+        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+        .MuiFormLabel-root {
+            font-size: 22px;
+            color: var(--dark-color);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .MuiFormControlLabel-label {
+            font-size: 18px;
+            color: var(--dark-color);
+        }
+        .MuiRadioGroup-root {
+            gap: 10px;
+        }
+        .MuiButton-root {
+            align-self: flex-end;
+            gap: 5px;
+            min-width: 198px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+        .survey-box, .quiz-box {
+            flex: 1;
+            .survey-form, .quiz-form{
+                width: 100%;
+            }
+        }
+    }
+    .quiz-content {
+        img {
+            display: block;
+            max-width: 640px;
+            width: 100%;
+            height: auto;
+        }
+    }
+    .survey-content {
+        .survey-stack{
+            height: 100%;
+        }
+        .heading-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            h4 {
+                margin-bottom: 0;
+            }                              
+        }
+        &.step-5 {
+            .survey-stack{
+                align-items: center;
+            }
+        }
+    }
     .quiz-stack{
         height: 100%;
     }
-    .heading-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-bottom: 16px;
-        border-bottom: 1px solid #DDDDDD;
-		h4 {
-			margin-bottom: 0;
-		}
-	}
-	.MuiFormLabel-root {
-		font-size: 22px;
-		color: #222222;
-		font-weight: 600;
-	}
-	.quiz-form {
-        flex: 1;
-        margin-top: 16px;
-	}
-	.MuiButton-root {
-		align-self: center;
-		gap: 10px;
-		padding-inline: 65px;
-	}
-    .MuiFormControlLabel-label {
-        font-size: 18px;
-        color: #222222;
-    }
-    .MuiRadioGroup-root {
-        gap: 10px;
+    .quiz-result{
+        .quiz-result-head {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            h4 {
+                margin-bottom: 0;
+            }
+            .quiz-wrapper {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                color: #9A1C13;
+                .quiz-result-pill {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 8px 20px;
+                    gap: 10px;
+                    background: #FFEFEE;
+                    border-radius: 30px;
+                    p {
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+                }
+            }
+            .quiz-result-progress {
+                p {
+                    color: var(--grey-color);
+                    line-height: 26px;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+        .quiz-action-buttons {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            justify-content: flex-end;
+        }
+        .quiz-answers{
+            margin-block: 24px;
+            .quiz-qustion-block{
+                padding: 16px;
+                background-color: #F3F6FF;
+                border: 1px solid var(--select-border-color);
+                border-radius: 12px;
+                &:not(:last-child){
+                    margin-bottom: 16px;
+                }
+                .quiz-option-head{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 16px;
+                    h5{
+                        font-size: 22px;
+                        font-weight: 600;
+                    }
+                }
+                .quiz-option{
+                    padding: 14px 16px;
+                    background: var(--white-color);
+                    border-radius: 12px;
+                    font-size: 18px;
+                    &:not(:last-child){
+                        margin-bottom: 12px;
+                    }
+                    &.quiz-option-correct{
+                        font-weight: 500;
+                        color: #166E3F;
+                        background: #EDF4F0;
+                        border: 1px solid;
+                    }
+                    &.quiz-option-wrong{
+                        font-weight: 500;
+                        color: #9A1C13;
+                        background: #FFEFEE;
+                        border: 1px solid;
+                    }
+                }
+            }
+        }
     }
 }
+/*Course Survey and Quiz End*/
+/*Course Detail Page End*/
+
+
+/*Community Tab Block Start*/
+.community-sidebar-grid{
+    width: 300px;
+    .community-sidebar {
+        padding: 16px;
+        .sidebar-tab-single {
+            justify-content: flex-start;
+            padding: 12px;
+            gap: 10px;
+            font-weight: 400;
+            border-radius: 12px;
+            font-size: 18px;
+            line-height: 1;
+            &.Mui-selected, &:hover {
+                background-color: var(--light-primary-color);
+                color: var(--primary-color);
+                font-weight: 600;
+            }
+            svg {
+                width: 26px;
+                height: auto;
+            }
+        }
+        .sidebar-tabs {
+            background-color: transparent;
+        }
+    }
+}
+
+.sidebar-spaces {
+	margin-top: 40px;
+	padding-top: 40px;
+	border-top: 1px solid var(--border-color);
+	h5 {
+		font-weight: 700;
+		margin-bottom: 16px;
+	}
+	.space-item {
+		display: flex;
+		align-items: center;
+		padding-block: 16px;
+		gap: 10px;
+        p{
+            font-weight: 500;
+        }
+		.item-icon {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 5px;
+			width: 36px;
+			height: 36px;
+			background: var(--dark-color);
+			border-radius: 150px;
+			color: var(--white-color);
+			svg {
+				width: 16px;
+				height: auto;
+			}
+		}
+		.item-icon-lock {
+            display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			right: -5px;
+			bottom: -9px;
+			background: var(--white-color);
+			border-radius: 100px;
+			color: var(--primary-color);
+			svg {
+				width: 11px;
+			}
+		}
+	}
+}
+
+/*Community Card Block Start*/
+.my-community{
+    flex: 1;
+    .my-community-left{
+        flex: 1;
+    } 
+    .my-community-right{
+        width: 425px;
+    }
+    .community-content{
+        .community-peoples {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .MuiButton-root{
+        font-weight: 700;
+        border-radius: 12px;
+        line-height: 1;
+        padding: 14px 20px;
+    }
+    .community-btn {
+        border: 0;
+        background: var(--primary-color);
+        .MuiButton-icon {
+            width: 20px;
+            margin-left: 10px;
+        }
+        &:hover{
+            background-color: var(--dark-color);
+        }
+    }
+}
+.my-community-left{
+    .community-card-main{
+        padding: 16px;
+        margin-bottom: 16px;
+        .community-card-media {
+            position: relative;
+            height: 290px;
+            overflow: hidden;
+            border-radius: 16px;
+            margin-bottom: 16px;
+
+            img{
+                height: 100%;
+                object-fit: cover;
+            }
+            .close-icon {
+                position: absolute;
+                top: 16px;
+                right: 16px;
+                width: 30px;
+                height: 30px;
+                background: var(--dark-color);
+                color: var(--white-color);
+                border-radius: 100%;
+                svg{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .community-card-media-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(0,0,0,0.37);
+            }
+        }
+        h5{
+            font-weight: 600;
+        }
+        p{
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+        .MuiAvatarGroup-root {
+            justify-content: flex-end;
+        }
+    }
+    .post {
+        padding: 16px;
+        &:not(:last-child){
+            margin-bottom: 16px;
+        }
+        .post-wrapper {
+            display: flex;
+            gap: 16px;
+        }
+        .create-post-stack {
+            flex: 1;
+            gap: 16px;
+        }
+
+        .create-post-action {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 8px;
+        }
+
+        .create-post-icons {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            color: var(--grey-color);
+            .MuiButton-root{
+                padding: 0;
+                color: var(--grey-color);
+                line-height: 1;
+                font-size: 16px;
+                font-weight: 700;
+            }
+            .reply-btn{
+                color: var(--primary-color);
+            }
+        }
+
+        .MuiFormLabel-root {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark-color);
+            line-height: 20px;
+            margin-block: 8px 16px;
+        }
+
+        .MuiAvatar-root {
+            width: 45px;
+            height: 45px;
+            font-size: 16px;
+            font-weight: 700;
+            border: 0;
+            background: #CDDBFF;
+        }
+    }
+}
+
+/*Community Card Block End*/
+
+/*Community Tab Block End*/

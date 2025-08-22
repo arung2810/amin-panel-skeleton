@@ -1,7 +1,7 @@
 export const Card = {
   styleOverrides: {
     root: ({ theme }) => ({
-      backgroundColor: 'var(--body-bg-color)',
+      backgroundColor: 'var(--white-color)',
       border: '1px solid var(--select-border-color)',
       boxShadow: '0px 4px 22px rgba(0, 0, 0, 0.1)',
       borderRadius: '16px',

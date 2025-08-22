@@ -3,8 +3,8 @@ import { Box, Tabs, Tab, TextField, Select, MenuItem, InputAdornment, FormContro
 import Search from '../../assets/images/icons/Search';
 import Course from '../../assets/images/icons/Course';
 import Communities from '../../assets/images/icons/Communities';
-import MyCoursesTab from './Course/MyCoursesTab';
-import MyCommunitiesTab from './MyCommunitiesTab';  
+import MyCoursesTab from './MyCoursesTab';
+import MyCommunitiesTab from './Communities';  
 
 function MyTraining() {
   const [tabValue, setTabValue] = React.useState(0);

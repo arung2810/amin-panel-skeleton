@@ -34,6 +34,13 @@ export const Input = {
         fontSize: '15px',
         color: 'var(--text-color)',
       },
+      '& .MuiInputBase-multiline': {
+        padding: '16px',
+        background: 'transparent',
+        border: '1px solid #DDDDDD',
+        boxShadow: '0 1px 1px rgba(25, 33, 61, 0.04)',
+        borderRadius: '16px',
+      },
     },
     adornment: {
       color: 'var(--grey-color)',
